@@ -1,12 +1,13 @@
 import 'dart:async';
 
+// ignore: unused_import
 import 'package:citylink/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({Key? key}) : super(key: key);
+  const SplashScreen({super.key});
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
