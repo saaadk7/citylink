@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "209741171377",
+    "project_id": "citylink-d45b5",
+    "storage_bucket": "citylink-d45b5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:209741171377:android:9cad1fdc6264946544b090",
+        "android_client_info": {
+          "package_name": "com.example.citylink"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0hnuGUfIt88SkuiFYD7XnhEMTv_YcnWU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
