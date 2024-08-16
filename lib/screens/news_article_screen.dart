@@ -24,27 +24,27 @@ class NewsArticleScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: NavigationBar(
-        destinations: const [
-          NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
-          NavigationDestination(icon: Icon(Icons.article), label: 'News'),
-          NavigationDestination(icon: Icon(Icons.video_library), label: 'Videos'),
-        ],
-        onDestinationSelected: (index) {
-          switch (index) {
-            case 0:
-              Navigator.pushNamed(context, '/home');
-              break;
-            case 1:
-              Navigator.pushNamed(context, '/newsArticle');
-              break;
-            case 2:
-              Navigator.pushNamed(context, '/videoPlayer');
-              break;
-          }
-        },
-        selectedIndex: 1, // Choose the index of the selected item
-      ),
+      // bottomNavigationBar: NavigationBar(
+      //   destinations: const [
+      //     NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
+      //     NavigationDestination(icon: Icon(Icons.article), label: 'News'),
+      //     NavigationDestination(icon: Icon(Icons.video_library), label: 'Videos'),
+      //   ],
+      //   onDestinationSelected: (index) {
+      //     switch (index) {
+      //       case 0:
+      //         Navigator.pushNamed(context, '/home');
+      //         break;
+      //       case 1:
+      //         Navigator.pushNamed(context, '/newsArticle');
+      //         break;
+      //       case 2:
+      //         Navigator.pushNamed(context, '/videoPlayer');
+      //         break;
+      //     }
+      //   },
+      //   selectedIndex: 1, // Choose the index of the selected item
+      // ),
     );
   }
 }

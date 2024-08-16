@@ -49,8 +49,8 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
         child:
             Icon(_controller.value.isPlaying ? Icons.pause : Icons.play_arrow),
       ),
-      bottomNavigationBar:
-          CustomNavigationBar(), // Replace with your custom widget
+      // bottomNavigationBar:
+      //     CustomNavigationBar(), // Replace with your custom widget
     );
   }
 }

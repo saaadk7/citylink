@@ -33,7 +33,7 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: CustomNavigationBar(),
+      //bottomNavigationBar: CustomNavigationBar(),
     );
   }
 }
