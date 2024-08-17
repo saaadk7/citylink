@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import '../widgets/nevigation_bar.dart';
-
+import '../widgets/navigation_bar.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -77,8 +76,8 @@ class LoginScreen extends StatelessWidget {
           ),
           GestureDetector(
             onTap: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) =>  CustomNavigationBar()));
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => CustomNavigationBar()));
             },
             child: Container(
               height: 50,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../widgets/news_article_card.dart';
 import '../widgets/video_card.dart';
-import 'package:citylink/widgets/nevigation_bar.dart';
+import 'package:citylink/widgets/navigation_bar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
