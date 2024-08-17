@@ -39,24 +39,36 @@ class NewsArticleScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: const Text(
-            'CityLink',
-            textAlign: TextAlign.center,
-          ),
-          automaticallyImplyLeading: false,
-          actions: <Widget>[
-            IconButton(
-              icon: const Icon(Icons.search),
-              onPressed: () {
-                // Action for search button
-              },
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(70.0),
+          child: Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Colors.pink, Colors.amber],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
             ),
-          ],
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          toolbarHeight: 70, // Adjusting the height of the AppBar
+            child: AppBar(
+              centerTitle: true,
+              title: const Text(
+                'CityLink',
+                textAlign: TextAlign.center,
+              ),
+              automaticallyImplyLeading: false,
+              actions: <Widget>[
+                IconButton(
+                  icon: const Icon(Icons.search),
+                  onPressed: () {
+                    // Action for search button
+                  },
+                ),
+              ],
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              toolbarHeight: 70, // Adjusting the height of the AppBar
+            ),
+          ),
         ),
         body: ListView.builder(
           padding: const EdgeInsets.all(16.0),
