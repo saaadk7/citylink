@@ -5,7 +5,7 @@ class VideoCard extends StatelessWidget {
   final String thumbnail;
   final VoidCallback onTap;
 
-  VideoCard({required this.title, required this.thumbnail, required this.onTap});
+  const VideoCard({super.key, required this.title, required this.thumbnail, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -18,12 +18,12 @@ class VideoCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ClipRRect(
-              borderRadius: BorderRadius.vertical(top: Radius.circular(10)),
+              borderRadius: const BorderRadius.vertical(top: Radius.circular(10)),
               child: Image.network(thumbnail, height: 150, width: double.infinity, fit: BoxFit.cover),
             ),
             Padding(
               padding: const EdgeInsets.all(10.0),
-              child: Text(title, style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              child: Text(title, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
             ),
           ],
         ),

@@ -19,38 +19,40 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'CityLink',
-      theme: ThemeData(
-        primarySwatch: Colors.amber,
-        scaffoldBackgroundColor: Colors.white,
+    return SafeArea(
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'CityLink',
+        theme: ThemeData(
+          primarySwatch: Colors.amber,
+          scaffoldBackgroundColor: Colors.white,
 
-        appBarTheme: AppBarTheme(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          titleTextStyle: const TextStyle(
-            color: Colors.black,
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
+          appBarTheme: const AppBarTheme(
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            titleTextStyle: TextStyle(
+              color: Colors.black,
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+            iconTheme: IconThemeData(color: Colors.black),
           ),
-          iconTheme: const IconThemeData(color: Colors.black),
+          // Add gradient background for the app
+          pageTransitionsTheme: const PageTransitionsTheme(
+            builders: {
+              TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
+              TargetPlatform.iOS: FadeUpwardsPageTransitionsBuilder(),
+            },
+          ),
         ),
-        // Add gradient background for the app
-        pageTransitionsTheme: const PageTransitionsTheme(
-          builders: {
-            TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
-            TargetPlatform.iOS: FadeUpwardsPageTransitionsBuilder(),
-          },
-        ),
+        initialRoute: '/',
+        routes: {
+          '/': (context) => const SplashScreen(),
+          '/home': (context) => const HomeScreen(),
+          '/videoPlayer': (context) => const VideoPlayerScreen(),
+          '/newsArticle': (context) => NewsArticleScreen(),
+        },
       ),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => const SplashScreen(),
-        '/home': (context) => const HomeScreen(),
-        '/videoPlayer': (context) => VideoPlayerScreen(),
-        '/newsArticle': (context) => NewsArticleScreen(),
-      },
     );
   }
 }

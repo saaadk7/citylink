@@ -5,7 +5,11 @@ class NewsArticleCard extends StatelessWidget {
   final String imageUrl;
   final VoidCallback onTap;
 
-  NewsArticleCard({required this.title, required this.imageUrl, required this.onTap});
+  const NewsArticleCard(
+      {super.key,
+      required this.title,
+      required this.imageUrl,
+      required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -18,12 +22,16 @@ class NewsArticleCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ClipRRect(
-              borderRadius: BorderRadius.vertical(top: Radius.circular(10)),
-              child: Image.network(imageUrl, height: 150, width: double.infinity, fit: BoxFit.cover),
+              borderRadius:
+                  const BorderRadius.vertical(top: Radius.circular(10)),
+              child: Image.network(imageUrl,
+                  height: 150, width: double.infinity, fit: BoxFit.cover),
             ),
             Padding(
               padding: const EdgeInsets.all(10.0),
-              child: Text(title, style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              child: Text(title,
+                  style: const TextStyle(
+                      fontSize: 18, fontWeight: FontWeight.bold)),
             ),
           ],
         ),

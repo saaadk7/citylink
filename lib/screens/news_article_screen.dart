@@ -4,7 +4,7 @@ import 'package:iconify_flutter/icons/mdi.dart';
 import 'package:shimmer/shimmer.dart';
 
 class NewsArticleScreen extends StatelessWidget {
-  final List<Map<String, String>> articles = [
+  final List<Map<String, String>> articles = const [
     {
       'title': 'Article 1',
       'image':
@@ -20,26 +20,43 @@ class NewsArticleScreen extends StatelessWidget {
     },
     {
       'title': 'Article 3',
-      'image': 'https://example.com/article_image_2.jpg',
+      'image': 'https://example.com/article_image_3.jpg',
       'content':
           'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     },
     {
       'title': 'Article 4',
-      'image': 'https://example.com/article_image_2.jpg',
+      'image': 'https://example.com/article_image_4.jpg',
       'content':
           'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     },
     // Add more articles here
   ];
 
+  const NewsArticleScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('News Articles'),
+          centerTitle: true,
+          title: const Text(
+            'CityLink',
+            textAlign: TextAlign.center,
+          ),
           automaticallyImplyLeading: false,
+          actions: <Widget>[
+            IconButton(
+              icon: const Icon(Icons.search),
+              onPressed: () {
+                // Action for search button
+              },
+            ),
+          ],
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          toolbarHeight: 70, // Adjusting the height of the AppBar
         ),
         body: ListView.builder(
           padding: const EdgeInsets.all(16.0),
@@ -93,7 +110,7 @@ class NewsArticleScreen extends StatelessWidget {
                       _buildReadCount(123), // Example read count
                     ],
                   ),
-                  Divider(),
+                  const Divider(),
                 ],
               ),
             );

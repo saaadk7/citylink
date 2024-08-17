@@ -4,6 +4,8 @@ import 'package:video_player/video_player.dart';
 //import 'package:citylink/widgets/navigation_bar.dart';
 
 class VideoPlayerScreen extends StatefulWidget {
+  const VideoPlayerScreen({super.key});
+
   @override
   _VideoPlayerScreenState createState() => _VideoPlayerScreenState();
 }

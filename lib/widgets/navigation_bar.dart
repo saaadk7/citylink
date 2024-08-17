@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:crystal_navigation_bar/crystal_navigation_bar.dart'; // Ensure you have this package in your pubspec.yaml
 
 class CustomNavigationBar extends StatefulWidget {
+  const CustomNavigationBar({super.key});
+
   @override
   State<CustomNavigationBar> createState() => _CustomNavigationBarState();
 }
@@ -12,8 +14,8 @@ class CustomNavigationBar extends StatefulWidget {
 class _CustomNavigationBarState extends State<CustomNavigationBar> {
   List<Widget> screensList = [
     const HomeScreen(),
-    NewsArticleScreen(),
-    VideoPlayerScreen(),
+    const NewsArticleScreen(),
+    const VideoPlayerScreen(),
     // Add another screen for the fourth tab
     Container(color: Colors.blue), // Placeholder for the fourth screen
   ];
