@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
           '/': (context) => const SplashScreen(),
           '/home': (context) => const HomeScreen(),
           '/videoPlayer': (context) => const VideoPlayerScreen(),
-          '/newsArticle': (context) => NewsArticleScreen(),
+          '/newsArticle': (context) => const NewsArticleScreen(),
         },
       ),
     );

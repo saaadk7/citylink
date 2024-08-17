@@ -165,9 +165,9 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
           AnimatedContainer(
             duration: const Duration(milliseconds: 200),
             padding: const EdgeInsets.all(8.0),
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               shape: BoxShape.circle,
-              gradient: const LinearGradient(
+              gradient: LinearGradient(
                 colors: [Colors.pink, Colors.amber],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
