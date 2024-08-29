@@ -19,40 +19,38 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'CityLink',
-        theme: ThemeData(
-          primarySwatch: Colors.amber,
-          scaffoldBackgroundColor: Colors.white,
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'CityLink',
+      theme: ThemeData(
+        primarySwatch: Colors.amber,
+        scaffoldBackgroundColor: Colors.white,
 
-          appBarTheme: const AppBarTheme(
-            backgroundColor: Colors.transparent,
-            elevation: 0,
-            titleTextStyle: TextStyle(
-              color: Colors.black,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
-            iconTheme: IconThemeData(color: Colors.black),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          titleTextStyle: TextStyle(
+            color: Colors.black,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
           ),
-          // Add gradient background for the app
-          pageTransitionsTheme: const PageTransitionsTheme(
-            builders: {
-              TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
-              TargetPlatform.iOS: FadeUpwardsPageTransitionsBuilder(),
-            },
-          ),
+          iconTheme: IconThemeData(color: Colors.black),
         ),
-        initialRoute: '/',
-        routes: {
-          '/': (context) => const SplashScreen(),
-          '/home': (context) => const HomeScreen(),
-          '/videoPlayer': (context) => const VideoPlayerScreen(),
-          '/newsArticle': (context) => const NewsArticleScreen(),
-        },
+        // Add gradient background for the app
+        pageTransitionsTheme: const PageTransitionsTheme(
+          builders: {
+            TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
+            TargetPlatform.iOS: FadeUpwardsPageTransitionsBuilder(),
+          },
+        ),
       ),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const SplashScreen(),
+        '/home': (context) => const HomeScreen(),
+        '/videoPlayer': (context) => const VideoPlayerScreen(),
+        '/newsArticle': (context) => const NewsArticleScreen(),
+      },
     );
   }
 }

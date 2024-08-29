@@ -16,19 +16,17 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              _buildAppBar(),
-              _buildVideoSection(context),
-              const Divider(),
-              _buildArticleSection(context),
-              const Divider(),
-              _buildServiceSection(),
-            ],
-          ),
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            _buildAppBar(),
+            _buildVideoSection(context),
+            const Divider(),
+            _buildArticleSection(context),
+            const Divider(),
+            _buildServiceSection(),
+          ],
         ),
       ),
     );

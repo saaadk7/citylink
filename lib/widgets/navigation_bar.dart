@@ -2,6 +2,7 @@ import 'package:citylink/screens/home_screen.dart';
 import 'package:citylink/screens/news_article_screen.dart';
 import 'package:citylink/screens/video_player_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:citylink/screens/events_screen.dart';
 import 'package:crystal_navigation_bar/crystal_navigation_bar.dart'; // Ensure you have this package in your pubspec.yaml
 
 class CustomNavigationBar extends StatefulWidget {
@@ -16,8 +17,9 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
     const HomeScreen(),
     const NewsArticleScreen(),
     const VideoPlayerScreen(),
+    EventsScreen(),
     // Add another screen for the fourth tab
-    Container(color: Colors.blue), // Placeholder for the fourth screen
+    // Placeholder for the fourth screen
   ];
 
   int _index = 0;
@@ -56,7 +58,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
             ),
             CrystalNavigationBarItem(
               icon: Icons.account_circle, // Use IconData instead of Icon
-              selectedColor: Colors.white,
+              selectedColor: const Color.fromARGB(255, 245, 0, 0),
             ),
           ],
         ),

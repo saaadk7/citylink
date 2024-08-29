@@ -37,97 +37,95 @@ class NewsArticleScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(70.0),
-          child: Container(
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Colors.pink, Colors.amber],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
-            ),
-            child: AppBar(
-              centerTitle: true,
-              title: const Text(
-                'CityLink',
-                textAlign: TextAlign.center,
-              ),
-              automaticallyImplyLeading: false,
-              actions: <Widget>[
-                IconButton(
-                  icon: const Icon(Icons.search),
-                  onPressed: () {
-                    // Action for search button
-                  },
-                ),
-              ],
-              backgroundColor: Colors.transparent,
-              elevation: 0,
-              toolbarHeight: 70, // Adjusting the height of the AppBar
+    return Scaffold(
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(70.0),
+        child: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.pink, Colors.amber],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
             ),
           ),
-        ),
-        body: ListView.builder(
-          padding: const EdgeInsets.all(16.0),
-          itemCount: articles.length,
-          itemBuilder: (context, index) {
-            final article = articles[index];
-            return Padding(
-              padding: const EdgeInsets.only(bottom: 20.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Shimmer.fromColors(
-                    baseColor: Colors.grey[300]!,
-                    highlightColor: Colors.grey[100]!,
-                    child: Image.network(article['image']!,
-                        height: 200, fit: BoxFit.cover),
-                  ),
-                  const SizedBox(height: 10),
-                  Shimmer.fromColors(
-                    baseColor: Colors.grey[300]!,
-                    highlightColor: Colors.grey[100]!,
-                    child: Text(
-                      article['title']!,
-                      style: const TextStyle(
-                          fontSize: 24, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  Shimmer.fromColors(
-                    baseColor: Colors.grey[300]!,
-                    highlightColor: Colors.grey[100]!,
-                    child: Text(
-                      article['content']!,
-                      maxLines: 4,
-                      overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(fontSize: 16),
-                    ),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      // Handle "Read more" functionality
-                    },
-                    child: const Text('...more'),
-                  ),
-                  const SizedBox(height: 20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      _buildIconButton(context, 'Like', Mdi.thumb_up_outline),
-                      _buildIconButton(context, 'Share', Mdi.share_variant),
-                      _buildReadCount(123), // Example read count
-                    ],
-                  ),
-                  const Divider(),
-                ],
+          child: AppBar(
+            centerTitle: true,
+            title: const Text(
+              'CityLink',
+              textAlign: TextAlign.center,
+            ),
+            automaticallyImplyLeading: false,
+            actions: <Widget>[
+              IconButton(
+                icon: const Icon(Icons.search),
+                onPressed: () {
+                  // Action for search button
+                },
               ),
-            );
-          },
+            ],
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            toolbarHeight: 70, // Adjusting the height of the AppBar
+          ),
         ),
+      ),
+      body: ListView.builder(
+        padding: const EdgeInsets.all(16.0),
+        itemCount: articles.length,
+        itemBuilder: (context, index) {
+          final article = articles[index];
+          return Padding(
+            padding: const EdgeInsets.only(bottom: 20.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Shimmer.fromColors(
+                  baseColor: Colors.grey[300]!,
+                  highlightColor: Colors.grey[100]!,
+                  child: Image.network(article['image']!,
+                      height: 200, fit: BoxFit.cover),
+                ),
+                const SizedBox(height: 10),
+                Shimmer.fromColors(
+                  baseColor: Colors.grey[300]!,
+                  highlightColor: Colors.grey[100]!,
+                  child: Text(
+                    article['title']!,
+                    style: const TextStyle(
+                        fontSize: 24, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                const SizedBox(height: 10),
+                Shimmer.fromColors(
+                  baseColor: Colors.grey[300]!,
+                  highlightColor: Colors.grey[100]!,
+                  child: Text(
+                    article['content']!,
+                    maxLines: 4,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(fontSize: 16),
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {
+                    // Handle "Read more" functionality
+                  },
+                  child: const Text('...more'),
+                ),
+                const SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    _buildIconButton(context, 'Like', Mdi.thumb_up_outline),
+                    _buildIconButton(context, 'Share', Mdi.share_variant),
+                    _buildReadCount(123), // Example read count
+                  ],
+                ),
+                const Divider(),
+              ],
+            ),
+          );
+        },
       ),
     );
   }
