@@ -6,6 +6,8 @@ import 'package:citylink/models/account_model.dart';
 import 'package:shimmer/shimmer.dart';
 
 class AccountScreen extends StatefulWidget {
+  const AccountScreen({super.key});
+
   @override
   State<AccountScreen> createState() => _AccountScreenState();
 }
@@ -134,14 +136,14 @@ class _AccountScreenState extends State<AccountScreen> {
   }
 
   Widget _buildAnnouncementBox() {
-    final TextEditingController _announcementController =
+    final TextEditingController announcementController =
         TextEditingController();
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         TextField(
-          controller: _announcementController,
+          controller: announcementController,
           maxLines: 3,
           decoration: const InputDecoration(
             border: OutlineInputBorder(),
@@ -160,13 +162,13 @@ class _AccountScreenState extends State<AccountScreen> {
   }
 
   Widget _buildSuggestionBox() {
-    final TextEditingController _suggestionController = TextEditingController();
+    final TextEditingController suggestionController = TextEditingController();
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         TextField(
-          controller: _suggestionController,
+          controller: suggestionController,
           maxLines: 3,
           decoration: const InputDecoration(
             border: OutlineInputBorder(),
@@ -317,7 +319,7 @@ class _AccountScreenState extends State<AccountScreen> {
 class UnderConstructionPage extends StatelessWidget {
   final String serviceName;
 
-  const UnderConstructionPage({required this.serviceName});
+  const UnderConstructionPage({super.key, required this.serviceName});
 
   @override
   Widget build(BuildContext context) {

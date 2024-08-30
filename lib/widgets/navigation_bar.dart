@@ -19,8 +19,8 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
     const HomeScreen(),
     const NewsArticleScreen(),
     //const VideoPlayerScreen(),
-    EventsScreen(),
-    AccountScreen(),
+    const EventsScreen(),
+    const AccountScreen(),
     // Add another screen for the fourth tab
     // Placeholder for the fourth screen
   ];

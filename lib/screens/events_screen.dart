@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:animations/animations.dart';
-import 'package:iconify_flutter/iconify_flutter.dart';
-import 'package:iconify_flutter/icons/mdi.dart';
+//import 'package:iconify_flutter/iconify_flutter.dart';
+//import 'package:iconify_flutter/icons/mdi.dart';
 import 'package:citylink/services/event_service.dart';
 import 'package:citylink/models/event_model.dart'; // Import your Event model
 
 class EventsScreen extends StatefulWidget {
+  const EventsScreen({super.key});
+
   @override
   State<EventsScreen> createState() => _EventsScreenState();
 }
@@ -112,11 +114,11 @@ class _EventsScreenState extends State<EventsScreen> {
   }
 
   Widget _buildContestTabs(List<Event> events) {
-    return DefaultTabController(
+    return const DefaultTabController(
       length: 4,
       child: Column(
         children: [
-          const TabBar(
+          TabBar(
             isScrollable: true,
             labelColor: Colors.black,
             indicatorColor: Colors.amber,
@@ -127,9 +129,9 @@ class _EventsScreenState extends State<EventsScreen> {
               Tab(text: "Contest 4"),
             ],
           ),
-          Container(
+          SizedBox(
             height: 300, // Adjust as needed
-            child: const TabBarView(
+            child: TabBarView(
               children: [
                 Center(child: Text("Content for Contest 1")),
                 Center(child: Text("Content for Contest 2")),
@@ -255,7 +257,7 @@ class _EventsScreenState extends State<EventsScreen> {
 class EventDetailsScreen extends StatelessWidget {
   final Event event;
 
-  const EventDetailsScreen({required this.event});
+  const EventDetailsScreen({super.key, required this.event});
 
   @override
   Widget build(BuildContext context) {
