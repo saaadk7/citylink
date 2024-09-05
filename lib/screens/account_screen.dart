@@ -74,7 +74,7 @@ class _AccountScreenState extends State<AccountScreen> {
                   _buildSuggestionBox(),
                   const SizedBox(height: 20),
                   _buildSectionTitle('Watch History'),
-                  // _buildWatchHistory(account.watchHistory),
+                 // _buildWatchHistory(account.watchHistory),
                   const SizedBox(height: 20),
                   _buildSectionTitle('Upcoming Services'),
                   _buildUpcomingServices(),
