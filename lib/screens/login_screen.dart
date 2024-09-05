@@ -1,3 +1,4 @@
+import 'package:citylink/presentation/home_screen_new.dart';
 import 'package:flutter/material.dart';
 import '../widgets/navigation_bar.dart';
 
@@ -22,7 +23,7 @@ class LoginScreen extends StatelessWidget {
               child: Text(
             "Login",
             style: TextStyle(
-                color: Colors.black, fontWeight: FontWeight.bold, fontSize: 40),
+                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 40),
           )),
           const Spacer(),
           Container(
@@ -76,8 +77,9 @@ class LoginScreen extends StatelessWidget {
           ),
           GestureDetector(
             onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => const CustomNavigationBar()));
+              Navigator.pushReplacement(context,MaterialPageRoute(builder: (context)=>const HomeScreenNew()));
+              // Navigator.of(context).push(MaterialPageRoute(
+              //     builder: (context) => const CustomNavigationBar()));
             },
             child: Container(
               height: 50,

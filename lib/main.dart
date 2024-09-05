@@ -1,3 +1,4 @@
+import 'package:citylink/presentation/home_screen_new.dart';
 import 'package:citylink/screens/home_screen.dart';
 import 'package:citylink/screens/news_article_screen.dart';
 import 'package:citylink/screens/splash_screen.dart';
@@ -24,10 +25,10 @@ class MyApp extends StatelessWidget {
       title: 'CityLink',
       theme: ThemeData(
         primarySwatch: Colors.amber,
-        scaffoldBackgroundColor: Colors.white,
-
+        scaffoldBackgroundColor: const Color(0xff021024),
         appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.transparent,
+          foregroundColor: Colors.white,
+          backgroundColor:   Color(0xff021024),
           elevation: 0,
           titleTextStyle: TextStyle(
             color: Colors.black,
@@ -47,7 +48,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const SplashScreen(),
-        '/home': (context) => const HomeScreen(),
+        '/home': (context) => const HomeScreenNew(),
         '/videoPlayer': (context) => const VideoPlayerScreen(),
         '/newsArticle': (context) => const NewsArticleScreen(),
       },
