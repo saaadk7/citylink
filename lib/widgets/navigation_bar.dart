@@ -17,7 +17,6 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
   List<Widget> screensList = [
     const HomeScreenNew(),
     const NewsArticleScreen(),
-    //const VideoPlayerScreen(),
     const EventsScreen(),
     const AccountScreen(),
     // Add another screen for the fourth tab
@@ -38,6 +37,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
         padding: const EdgeInsets.only(bottom: 10),
         child: CrystalNavigationBar(
           currentIndex: _index,
+          selectedItemColor: Colors.blue,
           unselectedItemColor: Colors.white70,
           backgroundColor: Colors.black.withOpacity(0.1),
           onTap: (index) {
@@ -48,19 +48,19 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
           items: [
             CrystalNavigationBarItem(
               icon: Icons.home, // Use IconData instead of Icon
-              selectedColor: Colors.white,
+
             ),
             CrystalNavigationBarItem(
               icon: Icons.article, // Use IconData instead of Icon
-              selectedColor: Colors.red,
+
             ),
             CrystalNavigationBarItem(
               icon: Icons.video_library, // Use IconData instead of Icon
-              selectedColor: Colors.white,
+
             ),
             CrystalNavigationBarItem(
               icon: Icons.account_circle, // Use IconData instead of Icon
-              selectedColor: const Color.fromARGB(255, 245, 0, 0),
+
             ),
           ],
         ),
