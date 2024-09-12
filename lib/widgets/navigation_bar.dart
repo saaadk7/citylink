@@ -1,10 +1,9 @@
 import 'package:citylink/presentation/home_screen_new.dart';
 import 'package:citylink/screens/account_screen.dart';
-import 'package:citylink/screens/home_screen.dart';
-import 'package:citylink/screens/news_article_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:citylink/screens/events_screen.dart';
-import 'package:crystal_navigation_bar/crystal_navigation_bar.dart'; // Ensure you have this package in your pubspec.yaml
+import 'package:crystal_navigation_bar/crystal_navigation_bar.dart';
+import '../presentation/article_screen_new.dart'; // Ensure you have this package in your pubspec.yaml
 
 class CustomNavigationBar extends StatefulWidget {
   const CustomNavigationBar({super.key});
@@ -16,7 +15,7 @@ class CustomNavigationBar extends StatefulWidget {
 class _CustomNavigationBarState extends State<CustomNavigationBar> {
   List<Widget> screensList = [
     const HomeScreenNew(),
-    const NewsArticleScreen(),
+    const ArticleScreenNew(),
     const EventsScreen(),
     const AccountScreen(),
     // Add another screen for the fourth tab
