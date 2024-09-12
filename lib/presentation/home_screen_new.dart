@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:citylink/presentation/video_player_screen_new.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreenNew extends StatefulWidget {
@@ -156,29 +157,34 @@ class _HomeScreenNewState extends State<HomeScreenNew> {
                   ),
                   itemCount: showImageList.length,
                   itemBuilder: (BuildContext context, int index, int realIndex) {
-                    return Container(
-                      height: 150,
-                      width: MediaQuery.of(context).size.width,
-                      decoration:  BoxDecoration(
-                          color: Colors.white,
-                          image: DecorationImage(
-                              image: AssetImage(showImageList[index]), fit: BoxFit.fill)),
-                      padding:const  EdgeInsets.all(10),
+                    return GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>const VideoPlayerScreenNew()));
+                      },
+                      child: Container(
+                        height: 150,
+                        width: MediaQuery.of(context).size.width,
+                        decoration:  BoxDecoration(
+                            color: Colors.white,
+                            image: DecorationImage(
+                                image: AssetImage(showImageList[index]), fit: BoxFit.fill)),
+                        padding:const  EdgeInsets.all(10),
 
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Text("${index+1}/${showImageList.length}",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
-                          Align(
-                            alignment: Alignment.bottomLeft,
-                            child: CircleAvatar(
-                              radius: 15,
-                              backgroundColor: Colors.white.withOpacity(0.5),
-                              child: const Icon(Icons.add,color: Colors.black,),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Text("${index+1}/${showImageList.length}",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+                            Align(
+                              alignment: Alignment.bottomLeft,
+                              child: CircleAvatar(
+                                radius: 15,
+                                backgroundColor: Colors.white.withOpacity(0.5),
+                                child: const Icon(Icons.add,color: Colors.black,),
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     );
                   },

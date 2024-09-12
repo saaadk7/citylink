@@ -25,6 +25,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'CityLink',
       theme: ThemeData(
+
+        dividerColor: Colors.transparent,
         primarySwatch: Colors.amber,
         scaffoldBackgroundColor: const Color(0xff021024),
         appBarTheme: const AppBarTheme(
