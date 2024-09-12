@@ -77,7 +77,7 @@ class LoginScreen extends StatelessWidget {
           ),
           GestureDetector(
             onTap: () {
-              Navigator.pushReplacement(context,MaterialPageRoute(builder: (context)=>const HomeScreenNew()));
+              Navigator.pushReplacement(context,MaterialPageRoute(builder: (context)=>const CustomNavigationBar()));
               // Navigator.of(context).push(MaterialPageRoute(
               //     builder: (context) => const CustomNavigationBar()));
             },

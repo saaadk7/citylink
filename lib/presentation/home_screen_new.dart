@@ -29,6 +29,13 @@ class _HomeScreenNewState extends State<HomeScreenNew> {
     "assets/show3.jpg",
     "assets/show4.jpg"
   ];
+  List<SimpleItem>optionList=[
+    SimpleItem(title: "My Corner", icon: Icons.grid_view),
+    SimpleItem(title: "Downloads", icon: Icons.arrow_downward),
+    SimpleItem(title: "MX Tube", icon: Icons.play_circle),
+    SimpleItem(title: "New & Free", icon: Icons.verified),
+    SimpleItem(title: "Watch Now", icon: Icons.hourglass_top),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,10 +79,11 @@ class _HomeScreenNewState extends State<HomeScreenNew> {
           ),
         ],
       ),
-      body: Column(
+      body: ListView(
         children: [
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
+            /// heading  Section
             child: Row(
               children: [
                 for (int i = 0; i < headingList.length; i++) ...[
@@ -124,6 +132,7 @@ class _HomeScreenNewState extends State<HomeScreenNew> {
               ],
             ),
           ),
+          /// Ad  Section
           Padding(
             padding: const EdgeInsets.all(10),
             child: Column(
@@ -138,6 +147,7 @@ class _HomeScreenNewState extends State<HomeScreenNew> {
                           fit: BoxFit.fill)),
                 ),
                 const SizedBox(height: 20,),
+                /// Top Video Slider  Section
                 CarouselSlider.builder(
                   options: CarouselOptions(
                     autoPlay: true,
@@ -176,9 +186,134 @@ class _HomeScreenNewState extends State<HomeScreenNew> {
               ],
             ),
           ),
+          /// ShotCut  Buttons  Section
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                for (int i = 0; i < optionList.length; i++) ...[
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: GestureDetector(
+                        onTap: () {
+                          setState(() {
+
+                          });
+                        },
+                        child:Column(
+                          children: [
+                            Container(
+                              height: 60,
+                              width: 60,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: const Color(0xff052659).withOpacity(0.5),
+                              ),
+                              child: Icon(optionList[i].icon,color:const Color(0xffC1E8FF),size: 30,),
+                            ),
+                            const SizedBox(height: 5,),
+                            Text(optionList[i].title,style: const TextStyle(color: Colors.blueGrey),)
+                          ],
+                        )),
+                  )
+                ]
+              ],
+            ),
+          ),
+          /// Our Shows  Section
+
+        Padding(
+          padding: const EdgeInsets.all(10),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const  Text("Our Show",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 18),),
+              IconButton(onPressed: (){}, icon:const  Icon(Icons.arrow_forward_ios_rounded,color: Colors.white,))
+            ],
+          ),
+        ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                for (int i = 0; i < optionList.length; i++) ...[
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: GestureDetector(
+                        onTap: () {
+                          setState(() {
+
+                          });
+                        },
+                        child: Container(
+                          height: 160,
+                          width: 120,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            image:const  DecorationImage(
+                              image: AssetImage("assets/poster.jpeg"),fit: BoxFit.fill
+                            )
+                          ),
+
+                        ),
+                    ),
+                  )
+                ]
+              ],
+            ),
+          ),
+          /// Our Shows  Section
+
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const  Text("Contest",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 18),),
+                IconButton(onPressed: (){}, icon:const  Icon(Icons.arrow_forward_ios_rounded,color: Colors.white,))
+              ],
+            ),
+          ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                for (int i = 0; i < optionList.length; i++) ...[
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+
+                        });
+                      },
+                      child: Container(
+                        height: 160,
+                        width: 120,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            image:const  DecorationImage(
+                                image: AssetImage("assets/poster.jpeg"),fit: BoxFit.fill
+                            )
+                        ),
+
+                      ),
+                    ),
+                  )
+                ]
+              ],
+            ),
+          ),
+         const  SizedBox(height: 100,)
+
 
         ],
       ),
     );
   }
+}
+class SimpleItem{
+ final  String title;
+ final IconData icon;
+ SimpleItem({required this.title,required this.icon});
 }
