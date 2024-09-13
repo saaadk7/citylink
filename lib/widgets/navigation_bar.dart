@@ -1,11 +1,9 @@
+import 'package:citylink/presentation/home_screen_new.dart';
 import 'package:citylink/screens/account_screen.dart';
-import 'package:citylink/screens/home_screen.dart';
-import 'package:citylink/screens/news_article_screen.dart';
-//import 'package:citylink/screens/video_player_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:citylink/screens/events_screen.dart';
-//import 'package:citylink/screens/account_screen.dart';
-import 'package:crystal_navigation_bar/crystal_navigation_bar.dart'; // Ensure you have this package in your pubspec.yaml
+import 'package:crystal_navigation_bar/crystal_navigation_bar.dart';
+import '../presentation/article_screen_new.dart'; // Ensure you have this package in your pubspec.yaml
 
 class CustomNavigationBar extends StatefulWidget {
   const CustomNavigationBar({super.key});
@@ -16,9 +14,8 @@ class CustomNavigationBar extends StatefulWidget {
 
 class _CustomNavigationBarState extends State<CustomNavigationBar> {
   List<Widget> screensList = [
-    const HomeScreen(),
-    const NewsArticleScreen(),
-    //const VideoPlayerScreen(),
+    const HomeScreenNew(),
+    const ArticleScreenNew(),
     const EventsScreen(),
     const AccountScreen(),
     // Add another screen for the fourth tab
@@ -39,6 +36,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
         padding: const EdgeInsets.only(bottom: 10),
         child: CrystalNavigationBar(
           currentIndex: _index,
+          selectedItemColor: Colors.blue,
           unselectedItemColor: Colors.white70,
           backgroundColor: Colors.black.withOpacity(0.1),
           onTap: (index) {
@@ -49,19 +47,19 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
           items: [
             CrystalNavigationBarItem(
               icon: Icons.home, // Use IconData instead of Icon
-              selectedColor: Colors.white,
+
             ),
             CrystalNavigationBarItem(
               icon: Icons.article, // Use IconData instead of Icon
-              selectedColor: Colors.red,
+
             ),
             CrystalNavigationBarItem(
               icon: Icons.video_library, // Use IconData instead of Icon
-              selectedColor: Colors.white,
+
             ),
             CrystalNavigationBarItem(
               icon: Icons.account_circle, // Use IconData instead of Icon
-              selectedColor: const Color.fromARGB(255, 245, 0, 0),
+
             ),
           ],
         ),

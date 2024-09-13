@@ -3,6 +3,7 @@ import 'package:citylink/screens/home_screen.dart';
 import 'package:citylink/screens/news_article_screen.dart';
 import 'package:citylink/screens/splash_screen.dart';
 import 'package:citylink/screens/video_player_screen.dart';
+import 'package:citylink/widgets/navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -24,6 +25,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'CityLink',
       theme: ThemeData(
+
+        dividerColor: Colors.transparent,
         primarySwatch: Colors.amber,
         scaffoldBackgroundColor: const Color(0xff021024),
         appBarTheme: const AppBarTheme(
@@ -48,7 +51,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const SplashScreen(),
-        '/home': (context) => const HomeScreenNew(),
+        '/navBar': (context) => const CustomNavigationBar(),
         '/videoPlayer': (context) => const VideoPlayerScreen(),
         '/newsArticle': (context) => const NewsArticleScreen(),
       },
