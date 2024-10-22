@@ -1,40 +1,45 @@
-// event_model.dart
 class Event {
-  final String id;
   final String title;
-  final String imageUrl;
-  final String description;
-  final DateTime date;
+  final String date;
+  final String time;
+  final String location;
   final String category;
+  final List<String> attendees;
+  final String imageUrl;
 
   Event({
-    required this.id,
     required this.title,
-    required this.imageUrl,
-    required this.description,
     required this.date,
+    required this.time,
+    required this.location,
     required this.category,
+    required this.attendees,
+    required this.imageUrl,
   });
 
+  // Convert Firestore Document to Event model
   factory Event.fromJson(Map<String, dynamic> json) {
     return Event(
-      id: json['id'],
-      title: json['title'],
-      imageUrl: json['imageUrl'],
-      description: json['description'],
-      date: DateTime.parse(json['date']),
-      category: json['category'],
+      title: json['title'] ?? '',
+      date: json['date'] ?? '',
+      time: json['time'] ?? '',
+      location: json['location'] ?? '',
+      category: json['category'] ?? '',
+      attendees: List<String>.from(json['attendees'] ?? []),
+      imageUrl: json['imageUrl'] ?? '',
     );
   }
 
+  // Convert Event model to JSON format for Firestore
   Map<String, dynamic> toJson() {
     return {
-      'id': id,
       'title': title,
-      'imageUrl': imageUrl,
-      'description': description,
-      'date': date.toIso8601String(),
+      'date': date,
+      'time': time,
+      'location': location,
       'category': category,
+      'attendees': attendees,
+      'imageUrl': imageUrl,
     };
   }
 }

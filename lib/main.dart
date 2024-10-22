@@ -1,5 +1,3 @@
-import 'package:citylink/presentation/home_screen_new.dart';
-import 'package:citylink/screens/home_screen.dart';
 import 'package:citylink/screens/news_article_screen.dart';
 import 'package:citylink/screens/splash_screen.dart';
 import 'package:citylink/screens/video_player_screen.dart';

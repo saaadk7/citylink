@@ -37,7 +37,7 @@ class ArticleScreenNew extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(20),
                                 image: const DecorationImage(
                                     image:
-                                        AssetImage("assets/artical_image.jpg"),
+                                        AssetImage("assets/ArticalImage.jpeg"),
                                     fit: BoxFit.fill)),
                           ),
 
@@ -52,7 +52,7 @@ class ArticleScreenNew extends StatelessWidget {
                             child: Column(
                               children: [
                                 const Text(
-                                  "'Breakthrough in Fusion Energy Brings Clean and LimitLess Power to the World'",
+                                  "'Jharange Patil Killed By Farnaves And Gang - Aurangabad'",
                                   style: TextStyle(
                                       fontWeight: FontWeight.w900,
                                       fontSize: 17),
@@ -98,7 +98,7 @@ class ArticleScreenNew extends StatelessWidget {
                         child: Padding(
                           padding: EdgeInsets.all(20),
                           child: Text(
-                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+                            "'Manoj Jarange Patil and his supporters have been demanding Maratha community be classified as Kunbis and those who are included in the OBC category implement the Sage Soyare notification.After his 6-hour march to Pune, he also addressed the Maratha community gathered in the Deccan area of Pune city. During his address, Patil said, government tried to terrorise our community from the start of this agitation, which also created confusion among the community that Maratha could not unite; therefore, we are here to show that we are strong and united with the same strength that was seen in Solapur, Satara'",
                             style: TextStyle(color: Colors.white),
                           ),
                         ),

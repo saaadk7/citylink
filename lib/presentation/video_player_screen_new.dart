@@ -108,7 +108,7 @@ class _VideoPlayerScreenNewState extends State<VideoPlayerScreenNew> {
                                           ),
                                           Expanded(
                                               child: Padding(
-                                            padding: const EdgeInsets.symmetric(
+                                            padding: EdgeInsets.symmetric(
                                                 horizontal: 10),
                                             child: LinearProgressIndicator(
                                               color: Colors.blueAccent,
