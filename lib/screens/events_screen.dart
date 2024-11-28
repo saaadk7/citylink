@@ -338,7 +338,6 @@ class _EventCategoryCard extends StatelessWidget {
   final String label;
 
   const _EventCategoryCard({
-    super.key,
     required this.icon,
     required this.label,
   });
